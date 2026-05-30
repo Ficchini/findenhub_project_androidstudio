@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#2C4A7A</color>
+    <color name="primary_dark">#1E2A38</color>
+    <color name="primary_light">#6B8FC8</color>
+    <color name="accent">#00D1C1</color>
+    <color name="background">#F4F6F8</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="text_primary">#1E2A38</color>
+    <color name="text_secondary">#5A5F66</color>
+    <color name="text_hint">#8A929B</color>
+    <color name="divider">#D7DEE6</color>
+    <color name="error">#B8334A</color>
+    <color name="success">#00796B</color>
+    <color name="warning">#FFD401</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Status de request -->
+    <color name="status_pending">#FFD401</color>
+    <color name="status_accepted">#00796B</color>
+    <color name="status_rejected">#B8334A</color>
+
+
+    <!-- Sugestões:
+    <color name="info">#2C4A7A</color>
+    <color name="link">#00D1C1</color>
+
+    <color name="chip_bg">#E6EDF4</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="input_bg">#FFFFFF</color>
+
+    <color name="badge_promo">#9C4EFF</color>
+    <color name="highlight_soft">#E6EDF4</color>
+
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_accent">#1E2A38</color>
+    <color name="on_warning">#1E2A38</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="on_success">#FFFFFF</color>
+     -->
 </resources>
