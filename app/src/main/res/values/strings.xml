@@ -35,6 +35,7 @@
     <string name="register_client_title">Criar conta — Cliente</string>
     <string name="hint_name">Nome completo</string>
     <string name="hint_cpf">CPF</string>
+    <string name="hint_cnpj">CNPJ</string>
     <string name="btn_register">Criar conta</string>
     <string name="btn_google_register">Cadastrar com Google</string>
 

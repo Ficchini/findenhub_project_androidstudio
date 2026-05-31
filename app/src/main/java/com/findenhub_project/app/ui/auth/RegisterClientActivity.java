@@ -1,26 +1,97 @@
+// Cadastro de novo usuário do tipo CLIENT.
+
 package com.findenhub_project.app.ui.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthCredential;
 
 import com.findenhub_project.app.R;
+import com.findenhub_project.app.data.model.User;
+import com.findenhub_project.app.ui.main.MainActivity;
+import com.findenhub_project.app.utils.Constants;
+import com.findenhub_project.app.utils.SessionManager;
+import com.findenhub_project.app.utils.Validators;
 
 public class RegisterClientActivity extends AppCompatActivity {
+
+    private TextInputEditText etName, etEmail, etCpf, etPassword;
+    private MaterialButton btnRegister, btnGoogle;
+    private CircularProgressIndicator progressBar;
+
+    private AuthViewModel viewModel;
+    private GoogleSignInHelper googleSignInHelper;
+    private SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_register_client);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        etName      = findViewById(R.id.et_client_name);
+        etEmail     = findViewById(R.id.et_client_email);
+        etCpf       = findViewById(R.id.et_client_cpf);
+        etPassword  = findViewById(R.id.et_client_password);
+        btnRegister = findViewById(R.id.btn_client_register);
+        btnGoogle   = findViewById(R.id.btn_client_google);
+        progressBar = findViewById(R.id.progress_client_register);
+
+        viewModel          = new ViewModelProvider(this).get(AuthViewModel.class);
+        googleSignInHelper  = new GoogleSignInHelper(this);
+        sessionManager     = new SessionManager(this);
+
+        btnRegister.setOnClickListener(v -> attemptRegister());
+        btnGoogle.setOnClickListener(v ->
+                startActivityForResult(googleSignInHelper.getSignInIntent(), Constants.RC_GOOGLE_SIGN_IN)
+        );
+
+        viewModel.getLoginResult().observe(this, user -> {
+            sessionManager.saveSession(user.getId(), user.getUserType(), user.getName());
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
         });
+        viewModel.getErrorMessage().observe(this, msg ->
+                Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+        );
+        viewModel.getIsLoading().observe(this, loading ->
+                progressBar.setVisibility(loading ? View.VISIBLE : View.GONE)
+        );
+    }
+
+    private void attemptRegister() {
+        String name     = etName.getText() != null ? etName.getText().toString().trim() : "";
+        String email    = etEmail.getText() != null ? etEmail.getText().toString().trim() : "";
+        String cpf      = etCpf.getText() != null ? etCpf.getText().toString().trim() : "";
+        String password = etPassword.getText() != null ? etPassword.getText().toString() : "";
+
+        if (!Validators.isNotEmpty(name)) { etName.setError(getString(R.string.error_empty_fields)); return; }
+        if (!Validators.isValidEmail(email)) { etEmail.setError(getString(R.string.error_invalid_email)); return; }
+        if (!Validators.isValidCpf(cpf)) { etCpf.setError(getString(R.string.error_invalid_cpf)); return; }
+        if (!Validators.isValidPassword(password)) { etPassword.setError(getString(R.string.error_weak_password)); return; }
+
+        User user = new User("", name, email, cpf, Constants.USER_TYPE_CLIENT);
+        viewModel.register(email, password, user);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == Constants.RC_GOOGLE_SIGN_IN) {
+            AuthCredential credential = googleSignInHelper.getCredentialFromIntent(data);
+            if (credential != null) {
+                viewModel.signInWithGoogle(credential, Constants.USER_TYPE_CLIENT);
+            } else {
+                Toast.makeText(this, R.string.error_generic, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }

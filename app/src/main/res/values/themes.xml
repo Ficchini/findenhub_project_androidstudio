@@ -8,6 +8,8 @@
         <item name="colorAccent">@color/accent</item>
         <item name="android:windowBackground">@color/background</item>
         <item name="android:statusBarColor">@color/primary</item>
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:fontFamily">@font/manrope</item>
     </style>
     <!-- Tema da splash sem ActionBar e com fundo primário -->
     <style name="Theme.Findenhub_project.Splash" parent="Theme.Findenhub_project">
@@ -16,7 +18,7 @@
     </style>
 
     <!-- Estilo padrão de botão primário -->
-    <style name="Widget.EventMarketplace.Button.Primary" parent="Widget.Material3.Button">
+    <style name="Widget.Findenhub_project.Button.Primary" parent="Widget.Material3.Button">
         <item name="android:backgroundTint">@color/primary</item>
         <item name="android:textColor">@color/white</item>
         <item name="cornerRadius">@dimen/button_radius</item>
@@ -27,7 +29,7 @@
     </style>
 
     <!-- Botão outline / secundário -->
-    <style name="Widget.EventMarketplace.Button.Outline" parent="Widget.Material3.Button.OutlinedButton">
+    <style name="Widget.Findenhub_project.Button.Outline" parent="Widget.Material3.Button.OutlinedButton">
         <item name="strokeColor">@color/primary</item>
         <item name="android:textColor">@color/primary</item>
         <item name="cornerRadius">@dimen/button_radius</item>
@@ -38,7 +40,7 @@
     </style>
 
     <!-- TextInputLayout padrão -->
-    <style name="Widget.EventMarketplace.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+    <style name="Widget.Findenhub_project.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">@color/primary</item>
         <item name="hintTextColor">@color/primary</item>
         <item name="boxCornerRadiusBottomEnd">@dimen/input_radius</item>
@@ -48,7 +50,7 @@
     </style>
 
     <!-- Card padrão -->
-    <style name="Widget.EventMarketplace.Card" parent="Widget.Material3.CardView.Elevated">
+    <style name="Widget.Findenhub_project.Card" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">@dimen/card_radius</item>
         <item name="cardElevation">2dp</item>
         <item name="contentPadding">@dimen/spacing_md</item>
