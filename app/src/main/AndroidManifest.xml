@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Findenhub_project">
+        <activity
+            android:name=".ui.client.events.EditEventActivity"
+            android:exported="false" />
         <!-- SplashActivity é o ponto de entrada do app -->
         <activity
             android:name=".ui.splash.SplashActivity"
@@ -24,53 +27,42 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.supplier.services.EditServiceActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.supplier.services.CreateServiceActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.client.suppliers.SupplierDetailsActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.client.events.CreateEventActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.client.events.EventDetailsActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.auth.RegisterSupplierActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.auth.RegisterClientActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.auth.RegisterChoiceActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.auth.LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ui.onboarding.WelcomeActivity"
             android:exported="false" />

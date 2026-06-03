@@ -58,6 +58,15 @@ public class ServiceRepository {
                 .addOnSuccessListener(unused -> callback.onSuccess(null))
                 .addOnFailureListener(callback::onFailure);
     }
+    /** Filtra serviços ativos por categoria */
+    public void getServicesByCategory(String category, FirestoreCallback<List<Service>> callback) {
+        db.collection(FirebaseCollections.SERVICES)
+                .whereEqualTo("active", true)
+                .whereEqualTo("category", category)
+                .get()
+                .addOnSuccessListener(snapshots -> callback.onSuccess(snapshots.toObjects(Service.class)))
+                .addOnFailureListener(callback::onFailure);
+    }
 
     public void deleteService(String serviceId, FirestoreCallback<Void> callback) {
         db.delete(FirebaseCollections.SERVICES, serviceId)

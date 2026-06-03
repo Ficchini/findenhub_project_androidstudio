@@ -10,6 +10,14 @@
         <item name="android:statusBarColor">@color/primary</item>
         <item name="fontFamily">@font/manrope</item>
         <item name="android:fontFamily">@font/manrope</item>
+
+        <!-- Cores de texto globais para inputs e superfícies -->
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="editTextStyle">@style/Widget.Findenhub_project.TextInputEditText</item>
     </style>
     <!-- Tema da splash sem ActionBar e com fundo primário -->
     <style name="Theme.Findenhub_project.Splash" parent="Theme.Findenhub_project">
@@ -47,6 +55,13 @@
         <item name="boxCornerRadiusBottomStart">@dimen/input_radius</item>
         <item name="boxCornerRadiusTopEnd">@dimen/input_radius</item>
         <item name="boxCornerRadiusTopStart">@dimen/input_radius</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+    </style>
+
+    <!-- Estilo para o campo de texto interno -->
+    <style name="Widget.Findenhub_project.TextInputEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_md</item>
     </style>
 
     <!-- Card padrão -->

@@ -51,9 +51,11 @@ public class EventDetailsActivity extends AppCompatActivity {
 
         btnDelete.setOnClickListener(v -> confirmDelete());
         // Editar: reabre CreateEventActivity pré-preenchida (simplificado para MVP)
-        btnEdit.setOnClickListener(v ->
-                Toast.makeText(this, "Edição em desenvolvimento", Toast.LENGTH_SHORT).show()
-        );
+        btnEdit.setOnClickListener(v -> {
+            Intent intent = new Intent(this, EditEventActivity.class);
+            intent.putExtra(Constants.EXTRA_EVENT_ID, eventId);
+            startActivity(intent);
+        });
         btnSeeSuppliers.setOnClickListener(v ->
                 Toast.makeText(this, "Veja a aba Fornecedores!", Toast.LENGTH_SHORT).show()
         );

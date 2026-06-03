@@ -1,9 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme para Modo Escuro -->
     <style name="Base.Theme.Findenhub_project" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+
         <item name="fontFamily">@font/manrope</item>
         <item name="android:fontFamily">@font/manrope</item>
+
+        <!-- Cores de texto globais para o Modo Escuro -->
+        <item name="android:editTextColor">@color/text_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Aplica o estilo de texto para todos os EditTexts -->
+        <item name="editTextStyle">@style/Widget.Findenhub_project.TextInputEditText</item>
+    </style>
+
+    <!-- Estilo para o campo de texto interno (herdado do modo claro, mas as cores vêm do res/values-night/colors.xml) -->
+    <style name="Widget.Findenhub_project.TextInputEditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_md</item>
     </style>
 </resources>

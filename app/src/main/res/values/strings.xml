@@ -116,5 +116,5 @@
     <string name="btn_cancel">Cancelar</string>
 
     <!-- Google Sign-In -->
-    <string name="default_web_client_id" translatable="false">SEU_WEB_CLIENT_ID_AQUI</string>
+    <string name="default_web_client_id" translatable="false">424540672052-28k3apdsfsjavn19ne7v6ih0dr0vpnur.apps.googleusercontent.com</string>
 </resources>

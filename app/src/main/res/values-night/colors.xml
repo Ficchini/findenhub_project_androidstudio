@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cores para o Modo Escuro -->
+    <color name="primary">#6B8FC8</color> <!-- Uma versão um pouco mais clara do azul para contraste no escuro -->
+    <color name="primary_dark">#000000</color>
+    <color name="primary_light">#A3C1F1</color>
+    <color name="accent">#00D1C1</color>
+
+    <color name="background">#121212</color> <!-- Fundo padrão Dark Mode -->
+    <color name="surface">#1E1E1E</color>
+
+    <!-- Cores de Texto para Modo Escuro -->
+    <color name="text_primary">#F4F6F8</color> <!-- Texto principal quase branco -->
+    <color name="text_secondary">#B0B8C1</color> <!-- Texto secundário cinza claro -->
+    <color name="text_hint">#707880</color> <!-- Hint mais discreto -->
+
+    <color name="divider">#2C2C2C</color>
+    <color name="input_bg">#1E1E1E</color>
+    <color name="card_bg">#1E1E1E</color>
+</resources>

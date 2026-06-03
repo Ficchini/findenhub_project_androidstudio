@@ -53,12 +53,47 @@
             android:textColor="@color/text_primary"
             android:textSize="@dimen/text_md" />
 
+        <!-- Separador visual -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:layout_marginBottom="@dimen/spacing_lg"
+            android:background="@color/divider" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar solicitação"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_lg"
+            android:textStyle="bold" />
+
+        <!-- Evento selecionado (visível após escolha) -->
+        <TextView
+            android:id="@+id/tv_selected_event_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:textColor="@color/success"
+            android:textSize="@dimen/text_sm"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_select_event"
+            style="@style/Widget.Findenhub_project.Button.Outline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:text="Selecionar evento" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_proposal_message"
             style="@style/Widget.Findenhub_project.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_xl"
+            android:layout_marginTop="@dimen/spacing_md"
             android:hint="@string/hint_proposal_message">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_proposal_message"

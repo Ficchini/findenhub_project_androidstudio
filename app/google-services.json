@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "424540672052",
+    "project_id": "findenhub-project",
+    "storage_bucket": "findenhub-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424540672052:android:7e42486ce58512defc7a61",
+        "android_client_info": {
+          "package_name": "com.findenhub_project.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424540672052-f351hgodjuinidduvi6e1j3pifvt6r91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.findenhub_project.app",
+            "certificate_hash": "f6ad12f16a35eea8d1206edf33a7d7192f9abe33"
+          }
+        },
+        {
+          "client_id": "424540672052-28k3apdsfsjavn19ne7v6ih0dr0vpnur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhLb_Qsg-51GK742mrbVDU24lUyTk-Knk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424540672052-28k3apdsfsjavn19ne7v6ih0dr0vpnur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

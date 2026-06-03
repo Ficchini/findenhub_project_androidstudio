@@ -1,5 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
+    id("com.android.application")
 }
 
 android {
@@ -45,9 +46,10 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
 
     // Firebase BOM — gerencia versões automaticamente
-    implementation (platform("com.google.firebase:firebase-bom:32.7.4"))
+    implementation(platform("com.google.firebase:firebase-bom:34.14.0"))
     implementation ("com.google.firebase:firebase-auth")
     implementation ("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-analytics")
 
     // Google Sign-In
     implementation ("com.google.android.gms:play-services-auth:21.0.0")
