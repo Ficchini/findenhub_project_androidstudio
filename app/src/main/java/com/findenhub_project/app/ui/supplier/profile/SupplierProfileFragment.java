@@ -89,7 +89,7 @@ public class SupplierProfileFragment extends Fragment {
 
     private void logout() {
         FirebaseAuthManager.getInstance().logout();
-        sessionManager.clearSession();
+        sessionManager.clearAll(requireActivity());
         Intent intent = new Intent(requireContext(), LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

@@ -42,4 +42,16 @@ public class SessionManager {
     public void clearSession() {
         prefs.edit().clear().apply();
     }
+
+    /** Limpa sessão local e desconecta Google Sign-In */
+    public void clearAll(android.app.Activity activity) {
+        clearSession();
+        // Desconecta do Google para forçar re-seleção de conta no próximo login
+        com.google.android.gms.auth.api.signin.GoogleSignIn
+                .getClient(activity,
+                        new com.google.android.gms.auth.api.signin.GoogleSignInOptions.Builder(
+                                com.google.android.gms.auth.api.signin.GoogleSignInOptions.DEFAULT_SIGN_IN)
+                                .build())
+                .signOut();
+    }
 }

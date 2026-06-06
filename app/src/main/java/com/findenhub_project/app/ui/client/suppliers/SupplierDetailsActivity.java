@@ -1,7 +1,7 @@
 // ui/client/suppliers/SupplierDetailsActivity.java
 // Exibe perfil do fornecedor + serviço selecionado.
 // Permite ao cliente escolher um evento existente antes de enviar a proposta.
-package br.com.eventmarketplace.ui.client.suppliers;
+package com.findenhub_project.app.ui.client.suppliers;
 
 import android.app.AlertDialog;
 import android.os.Bundle;

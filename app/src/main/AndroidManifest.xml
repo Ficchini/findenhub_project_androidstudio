@@ -14,9 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Findenhub_project">
         <activity
-            android:name=".ui.client.events.EditEventActivity"
+            android:name=".ui.common.components.StateView"
             android:exported="false" />
-        <!-- SplashActivity é o ponto de entrada do app -->
+        <activity
+            android:name=".ui.client.events.EditEventActivity"
+            android:exported="false" /> <!-- SplashActivity é o ponto de entrada do app -->
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
