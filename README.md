@@ -1,6 +1,6 @@
 # FindenHub
 
-**Marketplace de eventos acadêmico — Android Studio + Java + Firebase**
+**Marketplace de eventos — Android Studio + Java + Firebase**
 
 MVP desenvolvido como projeto acadêmico conectando clientes que organizam eventos com fornecedores de serviços.
 
