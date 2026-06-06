@@ -1,4 +1,4 @@
-# EventMarket
+# FindenHub
 
 **Marketplace de eventos acadêmico — Android Studio + Java + Firebase**
 
@@ -8,7 +8,7 @@ MVP desenvolvido como projeto acadêmico conectando clientes que organizam event
 
 ## Sobre o projeto
 
-EventMarket é um aplicativo Android nativo que funciona como marketplace entre dois perfis de usuário:
+FindenHub é um aplicativo Android nativo que funciona como marketplace entre dois perfis de usuário:
 
 - **Cliente** — cria eventos, explora fornecedores e envia propostas
 - **Fornecedor** — cadastra serviços, recebe e responde solicitações
@@ -44,12 +44,12 @@ EventMarket é um aplicativo Android nativo que funciona como marketplace entre 
 
 1. Acesse [console.firebase.google.com](https://console.firebase.google.com)
 2. Clique em **Adicionar projeto**
-3. Dê o nome `EventMarket` e siga os passos
+3. Dê o nome `FindenHub` e siga os passos
 
 ### 2. Registrar o app Android
 
 1. No painel do projeto, clique em **Adicionar app → Android**
-2. Package name: `br.com.eventmarketplace`
+2. Package name: `com.findenhub_project.app`
 3. Clique em **Registrar app**
 4. Baixe o arquivo `google-services.json`
 5. Cole o arquivo em `app/google-services.json`
@@ -117,7 +117,7 @@ git clone https://github.com/seu-usuario/eventmarket.git
 
 ```
 app/src/main/
-├── java/br/com/eventmarketplace/
+├── java/com.findenhub_project.app/
 │   ├── application/
 │   │   └── App.java                        # Inicialização do Firebase
 │   ├── data/
